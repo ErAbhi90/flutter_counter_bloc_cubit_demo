@@ -48,6 +48,9 @@ class MyHomeScreen extends StatelessWidget {
           BlocConsumer<CounterCubit, CounterState>(listener: (context, state) {
         //This is to do stuff based on cubit state that basically needs an overlay like snackbar, dialog etc
         final snackBar = SnackBar(content: Text('Counter is ${state.counter}'));
+        //Dismiss Existing SnackBar
+        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }, builder: (context, state) {
         return Center(
