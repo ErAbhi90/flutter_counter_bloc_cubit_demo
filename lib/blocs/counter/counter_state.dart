@@ -1,4 +1,4 @@
-part of 'counter_cubit.dart';
+part of 'counter_bloc.dart';
 
 class CounterState extends Equatable {
   final int counter;
@@ -6,7 +6,7 @@ class CounterState extends Equatable {
     required this.counter,
   });
 
-  factory CounterState.initial() => CounterState(counter: 0);
+  factory CounterState.initial() => const CounterState(counter: 0);
 
   @override
   List<Object> get props => [counter];
